@@ -43,7 +43,7 @@ public class Menu {
                     case 1:
                         System.out.println("\n--- Produtos Disponíveis ---");
                         for (Produto p : estoque.getProdutos()) {
-                            System.out.println(p.getId() + " - " + p.toString());
+                            System.out.println(p.getId() + " - " + p);
                             //System.out.println(p.getId() + " - " + p.getNome() + " (" + p.getMarca() + ") - R$" + p.getPreco());
                         }
                         break;
