@@ -7,11 +7,9 @@ public class Cliente {
     private String endereco;
     private Carrinho carrinho;
 
-    public Cliente(String nome, String email, String telefone, String endereco) {
+    public Cliente(String nome, String email) {
         this.nome = nome;
         this.email = email;
-        this.telefone = telefone;
-        this.endereco = endereco;
         this.carrinho = new Carrinho();
     }
 

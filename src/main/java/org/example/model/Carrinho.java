@@ -24,13 +24,14 @@ public class Carrinho {
         this.produtos.add(item);
     }
 
-    public void removerProduto(Produto produto) {
-        produtos.removeIf(item -> item.getProduto().equals(produto));
+    public boolean removerProduto(Produto produto) {
+        return produtos.removeIf(item -> item.getProduto().equals(produto));
     }
 
-    public void removerProduto(int idProduto) {
-        this.produtos.removeIf(item -> item.getProduto().getId() == idProduto);
+    public boolean removerProdutoPorId(int idProduto) {
+        return this.produtos.removeIf(item -> item.getProduto().getId() == idProduto);
     }
+
 
     public double getTotal(){
         double total = 0;
@@ -40,9 +41,10 @@ public class Carrinho {
         return total;
     }
 
-    public void gerarNota(){
+    public void gerarNota(String nomeCliente){
         double total = 0;
         System.out.printf("%n----------------- Nota -----------------%n");
+        System.out.println("Cliente: " + nomeCliente);
         for (ItemCarrinho item : produtos){
             String nome = item.getProduto().getNome();
             double preco = item.getProduto().getPreco();
