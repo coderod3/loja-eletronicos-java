@@ -45,17 +45,20 @@ public class Carrinho {
         double total = 0;
         System.out.printf("%n----------------- Nota -----------------%n");
         System.out.println("Cliente: " + nomeCliente);
-        for (ItemCarrinho item : produtos){
-            String nome = item.getProduto().getNome();
-            double preco = item.getProduto().getPreco();
-            int quantidade = item.getQuantidade();
-            double subtotal = preco * quantidade;
-            total += subtotal;
-            System.out.println(item.getProduto().toString() + " Total: " + subtotal);
-            //System.out.println(nome + " " + preco + " " + quantidade + " " + subtotal);
-        }
+        if (!this.produtos.isEmpty()) {
+            for (ItemCarrinho item : produtos) {
+                String nome = item.getProduto().getNome();
+                double preco = item.getProduto().getPreco();
+                int quantidade = item.getQuantidade();
+                double subtotal = preco * quantidade;
+                total += subtotal;
+                System.out.println(item.getProduto().toString() + " (" + quantidade + "x) - " + " Total: " + subtotal);
+            }
 
-        System.out.printf("%nTotal: %.2f%n", total);
+            System.out.printf("%nTotal: %.2f%n", total);
+        }else {
+            System.out.println("\nO carrinho se encontra vazio.");
+        }
     }
 
     // getter

@@ -11,7 +11,7 @@ public class ItemCarrinho {
 
     @Override
     public String toString() {
-        return String.format(produto.toString() + quantidade + "x");
+        return String.format(produto.toString() + "(" + quantidade + "x)");
     }
 
 
